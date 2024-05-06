@@ -1,0 +1,143 @@
+/* ヘッダー 
+============================== */
+.header {
+  height: fit-content;
+  /* margin-bottom: 1rem; */
+  padding: 0.5rem;
+  /* border-radius: 0.5rem; */
+  background-color: #ffdddf;
+  /* background-color: #e8f6ea; */
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items:end;
+  height: 100%;
+}
+
+.site img {
+  height: 50px;
+  /* aspect-ratio: 3.5/1; */
+  object-fit: contain;
+}
+
+/* モバイル用 ナビゲーション表示ボタン */
+.navbtn {
+  padding: 0;
+  outline: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #aaa;
+  font-size: 30px;
+}
+.open .navbtn {
+  z-index: 110;
+  color: #fff;
+}
+.navbtn .fa-bars {
+  display: revert;
+}
+.open .navbtn .fa-bars {
+  display: none;
+}
+.navbtn .fa-times {
+  display: none;
+}
+.open .navbtn .fa-times {
+  display: revert;
+}
+@media (min-width: 768px) {
+  .navbtn {
+    display: none;
+  }
+}
+
+.nav {
+  margin-bottom: 5px;
+}
+.nav ul {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 0.7rem;
+}
+.nav li {
+  display: block;
+  text-align: center;
+  width: 5rem;
+}
+.nav li a {
+  display: block;
+  width: auto; /* これがないと下線が横いっぱいに広がらない */
+  padding-top: 4px;
+  padding-bottom: 2px;
+  border-bottom: 2px solid gray;
+  text-decoration: none;
+  font-family: var(--font_serif);
+}
+.nav li a:hover {
+  background-color: gray;
+  color: white;
+  transition-property: all;
+  transition-duration: 300ms;
+}
+/* モバイル用 ナビゲーション */
+@media (max-width: 767px) {
+  .nav {
+    position: fixed;
+    inset: 0 -100% 0 100%;
+    z-index: 100;
+    background-color: #4e483ae6;
+
+    transition: transform 0.3s;
+  }
+  .open nav {
+    transform: translate(-100%, 0);
+  }
+  .open body {
+    /* これ指定すると崩れる */
+    /* position: fixed; */
+    overflow: hidden;
+  }
+  .nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 2rem;
+    color: #fff;
+  }
+  .nav li a {
+    border-color: #eee;
+    font-size: 1.2rem;
+  }
+}
+
+/* @media (prefers-color-scheme: dark) */
+@media all
+{
+  .header{
+    background-color: var(--darkred-bg);
+  }
+  .navbtn {
+    color: #ccc;
+  }
+  .nav li a {
+    color: #eee;
+    border-color: var(--darkred-accent-border);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  .nav li a:hover {
+    background-color: var(--darkred-accent-bg);
+  }
+}
+@media all and (max-width:767px) {
+  .nav {
+    background-color: rgba(101, 29, 1, 0.888);
+  }
+}

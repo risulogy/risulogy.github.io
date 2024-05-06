@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="ja">
+  
+  <head><title>脱・場合わけ！絶対値付き不等式の表す領域 | Risulogy</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/-css/master.css">
+    <script src="/-js/head.js"></script>
+    
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/ef1d60642a.js" crossorigin="anonymous"></script>
+
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" integrity="sha384-hIoBPJpTUs74ddyc4bFZSM1TVlQDA60VBbJS0oA934VSz82sBx1X7kSx2ATBDIyd" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+  </head>
+
+  <body>
+    <section class="hero">
+      <div class="hero-container">
+        <div class="hero-img-container">
+          <img src="hero.jpg" alt="">
+        </div>
+        <div class="hero-text-container">
+          <h1 class="hero_title">
+            <span class="hero-subtitle">
+              脱・場合わけ！
+            </span>
+            絶対値つき不等式の領域
+            <span class="hero-subtitle">
+              〜対称性利用〜
+            </span>
+          </h1>
+        </div>
+      </div>
+      <div class="info hz-container">
+        <div class="author-card">
+          <a href="/admin/itoiArchive/about/author/">
+            <img src="/admin/itoiArchive/about/author/author_icon/TRC.jpeg" alt="">
+            <div class="author">
+              <span class="author_title">執筆者</span>
+              TRC
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <main class="hz-container main">
+      <section>
+        <blockquote class="saying">
+          <nobr>── 場合わけなんかしてたら<wbr>時間足りねえよ</nobr>
+        </blockquote>
+      </section>
+
+      <section>
+        <h2>グラフの対称性</h2>
+        <div class="box box box-border">
+          $ x,y $ の方程式 $ f(x,y)=0 $ について、
+          <ul class="list">
+            <li>
+              $ \boldsymbol{f(-x,\quad y)=f(x,y)} $
+              $ \Longleftrightarrow $
+              グラフは<strong> $\boldsymbol y $ 軸対称</strong>
+            </li>
+            <li>
+              $ \boldsymbol{f(\quad x,-y)=f(x,y)} $
+              $ \Longleftrightarrow $
+              グラフは<strong> $\boldsymbol x $ 軸対称</strong>
+            </li>
+            <li>
+              $ \boldsymbol{f(-x,-y)=f(x,y)} $
+              $ \Longleftrightarrow $
+              グラフは<strong>原点対称</strong>
+            </li>
+          </ul>
+        </div>
+        <p>
+          数式で書くとわかりづらいが、例えば<strong>方程式の中の文字 $\boldsymbol x $ を全て $\boldsymbol{-x} $  に置き換えても同じ方程式が得られるならば、そのグラフは $\boldsymbol y $ 軸対称である</strong>ということだ。例を見てみよう
+        </p>
+        <div class="box box-ex">
+          <div class="box_title">例1</div>
+          <p>
+            $ y=|x| $ のグラフを考える。<br>
+            $ x $ を $ -x $ に置き換えると、左辺は変わらず、右辺も
+            $$ |-x|=|x| $$
+            となって元の方程式と同じであるから、グラフは $ y $ 軸対称。
+            <span class="ref" id="ref1"><a href="#note1">[1]</a></span>
+          </p>
+          <p>
+            対称性より $ x\geqq 0 $ とすると、 $ y=x $。
+            <figure><img src="fig/fig_01.jpg" alt="y=x(x>=0)のグラフ"></figure>
+            対称性を戻して、
+            <figure><img src="fig/fig_02.jpg" alt=""></figure>
+          </p>
+        </div>
+
+        <h3>一工夫いる場合</h3>
+        <div class="box box-ex">
+          <div class="box_title">例2</div>
+          $ y=|x-1| $ 
+        </div>
+        <p>
+          単純に $ x $ を $ -x $ に置き換えてみても、こんどは右辺が
+          $$ |-x-1|=|x+1| $$
+          となってしまい、元の式 $ y=|x-1| $ に一致しない。対称性は使えないのだろうか。
+        </p>
+        <p>
+          諦めるのはまだ早い。先に答えをお見せしよう。
+        </p>
+        <figure><img src="fig/fig_03.jpg" alt=""></figure>
+        <p>
+          <strong class="center">
+            あれ？　対称的な形じゃない？
+          </strong>
+        </p>
+        <p>
+          対称性の本質を思い出してほしい。
+        </p>
+        <p>
+          $ y=|x-1| $ において、 $ X=x-1 $ とおいてみると、
+          $$ y=|X| $$
+          この $ X $ についての方程式で、 $ X $ を $ -X $ に置き換えると
+          $$ |-X|=|X| $$
+          となり、元の方程式 $ y=|X| $ に一致する。
+        </p>
+        <p>
+          $ X $ を $ -X $ に置き換えても成り立つということは、グラフが<strong>直線 $\boldsymbol{X=0} $を軸に対称</strong>であることを意味する。
+        </p>
+        <p>
+          $ X=x-1 $ であったから、直線 $ X=0 $ というのは<strong> $\boldsymbol{xy}$ 平面上の直線 $\boldsymbol{x=1} $ のこと</strong>である。
+        </p>
+        <p>
+          グラフを見ると確かに $ x=1 $ を軸に対象になっている。
+        </p>
+        <figure><img src="fig/fig_04.jpg" alt=""></figure>
+
+        <h3>例</h3>
+        <div class="box box-ex">
+          <div class="box_title">例3</div>
+          $ |x|+|y|=1 $ <br>
+          対称性より $ x,y \geqq 0 $ とすると
+          $$ x+y=1 $$
+          <figure><img src="fig/fig_05.jpg" alt=""></figure>
+          対称性を戻して
+          <figure><img src="fig/fig_06.jpg" alt=""></figure>
+        </div>
+        <div class="box box-ex">
+          <div class="box_title">例4</div>
+          $ |x-2|+|y-1|=1 $ のグラフを求める。<br>
+          $ X=x-2,\quad Y=y-1 $ とおくと、方程式は
+          $$ |X|+|Y|=1 $$
+          対称性より、このグラフは直線 $ X=0, \quad Y=0 $ を軸に対称。<br>
+          直線 $ X=0 $ は $ x=2 $、 $ Y=0 $ は $ y=1 $。<br>
+          まず、対称の軸をかく。
+          <figure><img src="fig/fig_07.jpg" alt=""></figure>
+          $ X,Y \geqq 0 $ のとき $ X+Y=1 $。
+          <figure><img src="fig/fig_08.jpg" alt=""></figure>
+          対称性を戻して
+          <figure><img src="fig/fig_09.jpg" alt=""></figure>
+        </div>
+        <div class="box box-q">
+          <div class="box_title">練習</div>
+          $ |2x|+|y-1|=2 $ のグラフをかけ
+        </div>
+      </section>
+
+      <section>
+        <h2>応用1 ──2文字の式の絶対値──</h2>
+        <div class="box box-ex">
+          <div class="box_title">例5</div>
+          $ |x+y|+|x-y|=1 $ のグラフを求める。
+          $$ X=x+y,\quad Y=x-y $$
+          とおくと<br>
+          $ |X|+|Y|=1 $ より、直線 $ X=0, Y=0 $ を軸として対称。<br>
+          $ X=0 $ は $ x+y=0 $ すなわち $ y=-x $ <br>
+          $ Y=0 $ は $ x-y=0 $ すなわち $ y=x $ <br>
+          対称の軸をかく
+          <figure><img src="fig/fig_10.jpg" alt=""></figure>
+          $ X,Y \geqq 0 $ すなわち
+          $$ y\geqq -x, \quad y \leqq x $$
+           のとき<br>
+          $ X+Y = 1 $ より  $ (x+y)+(x-y)=1 $、 すなわち
+          $$ x=\dfrac{1}{2} $$
+          <figure><img src="fig/fig_11.jpg" alt=""></figure>
+          対称性を戻して
+          <figure><img src="fig/fig_12.jpg" alt=""></figure>
+        </div>
+        <div class="box box-q">
+          <div class="box_title">練習</div>
+          $ 2|x+y| + |x-y| = 2 $ のグラフを描け
+        </div>
+      </section>
+
+      <section>
+        <h2>応用2</h2>
+        <div class="box box-ex">
+          <div class="box_title">例6</div>
+          $ |x+y-2|+2|x-y|=2 $ のグラフ。<br>
+          $$ X=x+y-2, Y=x-y $$
+          とすると<br>
+          $$ |X|+2|Y|=2 $$
+          より、直線 $ X=0, Y=0 $ を軸として対称。<br>
+          直線$ X=0 $ は $ y=-x+2 $ 、 $ Y=0 $ は $ y=x $。 <br>
+          まず対称の軸をかく。
+          <figure><img src="fig/fig_13.jpg" alt=""></figure>
+          $ X,Y \geqq 0 $ すなわち
+          $$ y\geqq -x+2, \quad y \leqq x $$
+          のとき、
+          \begin{align}
+            2
+            &= X+2Y\\
+            &= (x+y-2) + 2(x-y)\\
+            &= 3x-y-2\\
+            y
+            &= 3x-4
+          \end{align}
+          <figure><img src="fig/fig_14.jpg" alt=""></figure>
+          対称性を戻して
+          <figure><img src="fig/fig_15.jpg" alt=""></figure>
+        </div>
+        <div class="box box-q">
+          <div class="box_title">練習</div>
+          $ 2|x+y-2|+|x+y|=2 $ のグラフを描け
+        </div>
+      </section>
+
+      <section>
+        <h2>裏技的なもの</h2>
+        <p>
+          とりあえず手描きのを貼っときます。余裕があれば打ち込む。
+        </p>
+        <figure class="fig-wide"><img src="fig/urawaza.jpg" alt=""></figure>
+      </section>
+
+      <section>
+        <h2>終わりに</h2>
+        <p>
+          冒頭でも述べたように、短い試験時間の中で4通りや16通りもの場合分けをしている余裕はない。対称性を使ってできる限り楽に解こう。
+        </p>
+        <div class="dasoku">
+          余裕があれば発展編も出します。あまりあてにしないでください。
+        </div>
+      </section>
+
+      <section>
+        <h2>質問・感想</h2>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSczB-URacogIBI3rb0xjjhG4qMVtaOTjSs_rrS4ttJluXrn_g/viewform?embedded=true" width="100%" height="600px" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      </section>
+
+      <section class="footnote">
+        <div class="note" id="note1">
+          <a href="#ref1">[1]</a>
+          <p>
+            ちゃんと定義に従って $ f(x,y)=0 $ という形にするなら、
+          </p>
+          <div class="box box-ex">
+            $ y=|x| $<br>
+            移項すると $ |x|-y=0 $ <br>
+            ここで左辺 $ f(x,y)=|x|-y $ とおくと
+            \begin{align}
+              f(-x,y)
+              &=|-x|-y \\
+              &=|x|-y \\
+              &=f(x,y)
+            \end{align}
+            であるから、グラフは $ y $ 軸対称。
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

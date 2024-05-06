@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head><title>解析#1 解析学とは | Risulogy_test</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/-css/master.css">
+  <script src="/-js/head.js"></script>
+
+  <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/ef1d60642a.js" crossorigin="anonymous"></script>
+
+  <!-- katex -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" integrity="sha384-hIoBPJpTUs74ddyc4bFZSM1TVlQDA60VBbJS0oA934VSz82sBx1X7kSx2ATBDIyd" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+</head>
+
+<body>
+  <main class="hz-container main">
+    <section class="title-section">
+      <div class="title-pankuzu">
+        <ul>
+          <li><a href="/">Risulogy</a></li>
+          <li><a href="/article/-dummy-calc/">解析</a></li>
+          <li><a href="/article/-dummy-calc/calc_1/">解析#1</a></li>
+        </ul>
+      </div>
+      <h1>解析#1 解析学とは (ダミーページ)</h1>
+      <p>
+        <strong>これはダミーページです。</strong>
+      </p>
+      <p>
+        解析学とは、、、
+      </p>
+    </section>
+
+    <section>
+      <h2>KaTeXの導入</h2>
+      <p>
+        KaTeXを導入できた。以前も導入して何らかの不都合でMathJaxに戻した記憶があるが、よく覚えていない。まあ、大丈夫だろう。インライン数式は例えば$e^{i\pi}=-1$のように書く。ディスプレイは
+        $$
+          \dfrac{d}{dx}\int_a^xf(t)dt = f(x)
+        $$
+        のようになる。
+  
+        HTMLのコード上でいくら改行しても表示には反映されない。brタグを用いれば<br>このように強制改行できる。
+      </p>
+      <p>
+        だいぶ思い出してきた。懐かしいなあ。昔の自分はこんなのすらすら作っていたのか、信じられん。  
+      </p>
+      <p>
+        ついでにjsのfetch APIを用いた共通部分のインクルード化も試してみた。ローカルのファイルを直接開いたのではAPIが動作しないが、VSCodeのLiveServer拡張機能を用いれば、これが仮想的なサーバのように機能してくれるおかげできちんと動作している。
+      </p>
+      <p>
+        しかもこいつ、保存するたびにページが自動で更新される。有能やんけ。
+      </p>
+    </section>
+  </main>
+</body>
+</html>

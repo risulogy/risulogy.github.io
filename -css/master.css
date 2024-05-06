@@ -1,0 +1,703 @@
+@charset "utf-8";
+
+@import "/-css/master_header.css";
+@import "/-css/master_footer.css";
+
+:root {
+  /* --h2_color: rgb(255, 168, 188); */
+  --link_color: rgb(19, 98, 255);
+  --link_color-dark: rgb(140, 211, 253);
+  --blocklink_color: rgb(155, 215, 239);
+  --blocklink_color_hover: rgb(194, 233, 249);
+
+  --darkred-bg: rgb(101, 29, 1);
+  --darkred-accent-bg: rgb(171, 21, 57);
+  --darkred-accent-border: rgb(239, 38, 85);
+
+  --darkblue-bg: rgb(26, 68, 114);
+  --darkblue-accent: rgb(70, 113, 200);
+
+  --darkgreen-bg: rgb(62, 111, 43);
+
+  --arrow: " ＞";
+  --font_sans: sans-serif;
+  --font_serif: serif;
+}
+
+/* 基本 */
+html {
+  font-size: 62.5%;
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+}
+body {
+  /* max-width: 1000px; */
+  margin: auto;
+
+  /* background-color: rgb(220, 237, 246); */
+  background-color: rgb(255, 248, 248);
+
+  color: #222;
+  font-family: var(--font_sans);
+  font-weight: normal;
+  font-size: 1rem;
+
+  word-wrap: break-word;
+}
+h1, h2, h3, h4, h5, h6, p, pre, figure, ul, dl {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+p {
+  line-height: 1.8;
+  margin: 1rem 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  display: block;
+  /* オリジナルサイズより拡大しない */
+  max-width: 100%;
+  height: auto;
+}
+::first-letter {
+  font-feature-settings: "palt";
+}
+
+/* 水平コンテナ */
+.hz-container {
+  width: min(92%, 800px);
+  height: fit-content;
+  margin: auto;
+  position: relative;
+}
+
+
+
+
+
+/* ヒーロー
+================== */
+.hero-container {
+  height: 250px;
+  display: grid;
+  grid-template-rows: 100%;
+}
+.hero-container > * {
+  grid-area: 1/1;
+}
+.hero-img-container {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.hero-img-container img {
+  width: 100%;
+
+  /* 指定しないと溢れる */
+  height: 100%;
+
+  object-fit: cover;
+
+  opacity: 70%;
+}
+.hero-text-container {
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  /* display: grid;
+  align-items: center;
+  justify-content: center;
+  justify-items: right; */
+}
+.hero_title {
+  padding: 5px 30px;
+  width: fit-content;
+  border-radius: 10px;
+  background-color: rgba(251, 223, 150, 0.839);
+
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  gap: 5px;
+}
+.hero-subtitle {
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+
+.footnote {
+  margin: auto;
+  margin-top: 3rem;
+  padding-top: 1rem;
+
+  border-top: 0.1rem solid gray;
+  font-size: 0.9rem;
+  line-height: 1rem;
+}
+.footnote p {
+  line-height: 1.5rem;
+}
+.footnote .eq {
+  font-size: 1rem;
+}
+/* 脚注 */
+.ref a, .note a{
+  color: gray;
+}
+.ref a:hover, .note a:hover {
+  color: lightgray;
+}
+.note {
+  margin: 1rem auto;
+}
+.note a::after {
+  content: "　";
+}
+
+
+
+
+/* 各記事ページ
+=================== */
+.main {
+}
+.main section {
+  margin: 5rem 0;
+}
+.main .title-section {
+  margin-top: 2rem;
+  margin-bottom: -2rem;
+}
+.main .section-inner {
+  margin: 2rem 0;
+}
+
+/* パンくず */
+.title-pankuzu {
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+.title-pankuzu ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* list-style-type: none; */
+  /* list-style-position: outside; */
+}
+.title-pankuzu li {
+  margin-right: 0.5rem;
+}
+.title-pankuzu ul :not(:last-child) ::after{
+  content: " ＞ ";
+}
+.title-pankuzu a {
+  color: gray;
+}
+
+.subtitle {
+  margin-bottom: 0;
+  color: #3c3c3c;
+  font-size: 0.9rem;
+}
+.main h1 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  border-bottom: 0.2rem solid skyblue;
+  font-weight: normal;
+  font-size: 1.8rem;
+  color: #000;
+}
+
+
+.relation-nav {
+  /* Previous and Next */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.relation-nav .prev::before {
+  content: "＜　";
+}
+.relation-nav .next::after {
+  content: "　＞";
+}
+.relation-nav a {
+  display: flexbox;
+  margin-right: 1rem;
+  padding: 0 0.5rem;
+  /* background-color: var(--blocklink_color); */
+  color: var(--link_color);
+  font-size: 0.9rem;
+}
+.relation-nav a:hover {
+  text-decoration: underline;
+}
+
+/* サムネイル */
+.thumb {
+  margin: 1rem;
+}
+.thumb img {
+  margin: 0 auto;
+  width: 70%;
+  max-width: 40rem;
+  min-width: min(30rem, 100%);
+}
+/* 更新日,執筆者情報 */
+.info {
+  margin-top: 1rem;
+  text-align: right;
+  margin-bottom: 0;
+  color: rgb(60, 60, 60);
+  font-size: 0.9rem;
+}
+/* .info dt {
+  display: inline;
+}
+.info dd {
+  display: inline;
+} */
+.author-card {
+  margin-left: auto;
+  width: fit-content;
+  height: fit-content;
+}
+.author-card + .author-card {
+  margin-top: 1rem;
+}
+.author-card a {
+  padding: 10px 20px;
+  width: fit-content;
+  border: #999 solid 1px;
+  border-radius: 5px;
+  background-color: #eee;
+  color: #444;
+  display: flex;
+}
+.author-card img {
+  height: 3.5rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+.author {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.author_title {
+  display: block;
+  font-weight: normal;
+  font-size: 0.9rem;
+}
+
+
+
+.main h2 {
+  margin-bottom: 1rem;
+  padding: 1px 1rem;
+  width: fit-content;
+  
+  border-left: 0.3rem solid rgb(255, 168, 188);
+  background-color: rgb(251, 215, 223);
+
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.main h3 {
+  margin: 2rem 0.5rem 1rem;
+  width: fit-content;
+  
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-bottom: 0.2rem solid lightgray;
+  
+  font-size: 1rem;
+}
+.subheading {
+  display: block;
+  font-size: 1rem;
+}
+
+
+.list {
+  margin-left: 1rem;
+  list-style: revert;
+}
+.list li {
+  line-height: 2rem;
+}
+
+
+.dasoku {
+  margin: 1rem;
+  border-left: #aaa solid 1px;
+  padding: 0 0.7rem;
+  width: fit-content;
+
+  color: #666;
+  font-size: 0.8rem;
+  line-height: 1rem;
+}
+.dasoku p {
+  font-size: 0.8rem;
+  line-height: 1rem;
+}
+
+
+
+
+
+/* 削除したい */
+.center {
+  margin: 1rem;
+  display: block;
+  text-align: center;
+}
+.right {
+  margin: 1rem;
+  display: block;
+  text-align: right;
+}
+
+.saying {
+  margin: 0;
+  font-family: serif;
+  font-weight: bold;
+  line-height: 2rem;
+}
+.saying cite {
+  display: block;
+  text-align: right;
+  font-style: normal;
+}
+.saying cite::before {
+  content: "──";
+}
+
+.box {
+  margin: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  max-width: 100%;
+  box-sizing: border-box;
+  height: fit-content;
+  overflow-wrap: break-word;
+  overflow-x: auto;
+
+  line-height: 1.8rem;
+}
+@media (max-width: 767px) {
+  .box {
+    margin: 1rem 0;
+    padding: 0.5rem;
+  }
+}
+.box-q {
+  background-color: rgb(201, 241, 255);
+}
+.box-a {
+  /* background-color: rgb(255, 221, 226); */
+  background-color: rgb(198, 254, 211);
+}
+.box-ex {
+  background-color: #eee;
+}
+.box-border {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: 0.3rem solid powderblue;
+}
+.box_title {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.eq {
+  margin: 1rem auto;
+  text-align: center;
+}
+
+
+
+figure {
+  margin: 0;
+  padding: 0;
+}
+figure img {
+  margin: 1rem auto;
+  height: 12rem;
+  width: auto;
+  border: 2px solid rgb(142, 175, 230);
+  border-radius: 10px;
+}
+figure.fig-mid img {
+  width: min(80%, 15rem);
+  height: auto;
+}
+figure.fig-wide img {
+  width: min(100%, 25rem);
+  height: auto;
+}
+/* figure.fig-small img  {
+  height: 12rem;
+  width: auto;
+} */
+figure.fig-max img {
+  margin: 0;
+  width: 100%;
+  height: auto;
+}
+
+dt {
+  font-family: sans-serif;
+  font-weight: bold;
+}
+dt:not(:last-child) {
+  margin-top: 1rem;
+}
+dd {
+  margin: 0;
+}
+
+
+/* インライン
+================== */
+
+strong,
+.bold {
+  font-family: sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+strong::before {
+  content: " ";
+}
+strong::after {
+  content: " ";
+}
+.highlight {
+  background-color: rgba(255, 255, 0, 0.793);
+}
+
+.img-inline {
+  display: inline-block;
+  height: 1em;
+  margin: 0 0.5rem;
+}
+
+
+.mark {
+  display: inline-block;
+  margin: 0 0.5rem;
+  padding: 0 0.5rem;
+  background-color: #dbe4e7;
+  border-radius: 0.3rem;
+  font-weight: bold;
+}
+
+/* 場所どうする？てか綺麗にしなさい */
+/* articlecardで「New！」とか表示するやつ */
+.state {
+  display: inline-block;
+  margin: 0 0.5rem;
+  padding: 0 0.5rem;
+  background-color: #fdd495;
+  border: rgb(255, 255, 255) solid 1px;
+  border-radius: 0.3rem;
+  font-weight: bold;
+  color: #333;
+}
+
+
+
+
+/* リンク
+=====================*/
+.link {
+  color: var(--link_color);
+  text-decoration: none;
+}
+.link::after {
+  content: var(--arrow);
+}
+.link:hover {
+  text-decoration: underline;
+}
+
+.blocklink {
+  display: inline-block;
+  /* margin: 1rem 0; */
+  padding: 0 0.5rem;
+  width: fit-content;
+  border-radius: 0.5rem;
+  background-color: var(--blocklink_color);
+  font-weight: bold;
+}
+.blocklink::after {
+  content: var(--arrow);
+}
+.blocklink:hover {
+  background-color: var(--blocklink_color_hover);
+}
+
+.link-noarrow::after {
+  content: none;
+}
+
+
+
+/* 記事カード
+===================== */
+.articlecards-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 0.7rem;
+  align-items: flex-start;
+}
+@media (min-width: 768px) {
+  .articlecards-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.articlecard {
+  /* background-color: rgb(254, 243, 228); */
+  background-color: rgb(230, 237, 255);
+  border: solid rgb(208, 218, 255) 4px;
+  transition: background-color 0.5s;
+}
+.articlecard:hover {
+  background-color: rgb(208, 218, 255);
+}
+.articlecard a {
+  display: block;
+}
+.articlecard_title {
+  margin: 1rem 0;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.5rem;
+}
+.articlecard_img {
+  overflow: hidden;
+}
+.articlecard_img img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  width: 100%;
+  max-height: 100%;
+  transition: transform 0.5s;
+}
+.articlecard:hover img {
+  transform: scale(1.2,1.2);
+}
+
+/* @media (prefers-color-scheme: dark) */
+@media all
+{
+  body {
+    background-color: #252020;
+    color: #fff;
+  }
+  p {
+    color: #eee;
+  }
+  .hero-text-container {
+    color: #fff;
+  }
+  .hero_title {
+    background-color: rgba(213, 93, 66, 0.832);
+  }
+  .main h1 {
+    color: #fff;
+    border-color: var(--darkblue-accent);
+  }
+  .main h2 {
+    color: #fff;
+    border-left: 0.3rem solid rgb(177, 70, 70);
+    background-color: rgb(124, 50, 50);
+  }
+  .subtitle, .info{
+    color: #ccc;
+  }
+  .relation-nav a {
+    color: var(--link_color-dark);
+  }
+
+  .mark {
+    background-color: #666;
+  }
+
+  .highlight {
+    background-color: rgba(128, 128, 2, 0.793);
+  }
+
+  .box {
+    color: #fff;
+  }
+  .box-q {
+    /* background-color: rgb(17, 75, 123); */
+    background-color: var(--darkblue-bg);
+  }
+  .box-a {
+    background-color: var(--darkgreen-bg);
+  }
+  .box-ex {
+    background-color: #444;
+  }
+  .box-border {
+    /* border-color: rgb(63, 140, 175); */
+    border-color: var(--darkblue-accent);
+  }
+
+  .dasoku {
+    color: #ccc;
+  }
+
+  .ref a, .note a {
+    color: #999;
+  }
+
+  .link {
+    color: var(--link_color-dark);
+  }
+
+  .articlecard {
+    /* background-color: rgb(50, 56, 109);
+    border: solid 4px rgb(50, 56, 109); */
+    background-color: var(--darkred-accent-bg);
+    border: var(--darkred-accent-bg) 4px solid;
+    border-radius: 5px;
+
+    transition: background-color 0.5s;
+  }
+  .articlecard:hover {
+    /* background-color: rgb(92, 100, 173); */
+    background-color: var(--darkred-accent-border);
+  }
+  .state {
+    background-color: #d46a00;
+    border: none;
+    color: #fff;
+  }
+
+  .blocklink {
+    background-color: var(--darkred-accent-bg)
+  }
+  .blocklink:hover {
+    background-color: var(--darkred-accent-border);
+  }
+
+}

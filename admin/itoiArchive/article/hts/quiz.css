@@ -1,0 +1,74 @@
+.quiz-section input[type="radio"] {
+  display: none;
+}
+.quiz-section .choice {
+  margin-left: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.quiz-section label:not(:last-child) {
+  margin-right: 0.5rem;
+}
+.quiz-section label {
+  display: block;
+  padding: 0.5rem;
+  width: fit-content;
+  min-width: 5rem;
+  margin-bottom: 0.3rem;
+  text-align: center;
+  /* background-color: azure; */
+  border: 0.1rem solid gray;
+  border-radius: 0.2rem;
+}
+.quiz-section label:hover {
+  cursor: pointer;
+}
+.quiz-section .a_print,
+.quiz-section .w_print {
+  display: none;
+  margin: 1rem;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+.quiz-section .a_print::before,
+.quiz-section .w_print::before {
+  content: "　";
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background-size: contain;
+  vertical-align: middle;
+}
+.quiz-section .a_print::before {
+  background-image: url("../-img/correct.svg");
+}
+.quiz-section .w_print::before {
+  background-image: url("../-img/wrong.svg");
+}
+
+.quiz-section .a:checked~.choice label.la {
+  background-color: lightgreen;
+}
+.quiz-section .w:checked~.choice label.lw {
+  background-color: lightpink;
+}
+.quiz-section .a:checked ~ .a_print {
+  display: block;
+}
+.quiz-section .w:checked ~ .w_print {
+  display: block;
+}
+.quiz-section .expl,
+.quiz-section .close {
+  display: none;
+  margin: 1rem;
+}
+.quiz-section input:checked ~ .expl,
+.quiz-section input:checked ~ .close {
+  display: block;
+}
+
+/* .quiz-section .close:visited,
+.quiz-section .close:visited~.expl {
+  display: none;
+} */

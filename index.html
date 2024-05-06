@@ -1,66 +1,145 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- risulogy_test  -->
 
-<head>
+<!DOCTYPE html>
+<html lang="ja">
+
+<head><title>Risulogy_test</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Risulogy_test</title>
 
-  <!-- <link rel="stylesheet" href="/-css/master.css">
-  <script>
-    MathJax = {
-      chtml: { matchFontHeight: false },
-      tex: { inlineMath: [['$', '$']] }
-    };
-  </script>
-  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script> -->
+  <link rel="stylesheet" href="/-css/top.css">
 
-  <!-- KaTeXを利用してみる -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
-  <!-- Automatically render math in text elements -->
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      renderMathInElement(document.body, {
-        delimiters: [
-          {left: "$$", right: "$$", display: true},
-          {left: "$", right: "$", display: false},
-        ]
-      });
-    });
-  </script>
+  <link rel="stylesheet" href="/-css/master.css">
+  <script defer src="/-js/head.js"></script>
+
+  <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/ef1d60642a.js" crossorigin="anonymous"></script>
+
+  <!-- katex -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" integrity="sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" integrity="sha384-hIoBPJpTUs74ddyc4bFZSM1TVlQDA60VBbJS0oA934VSz82sBx1X7kSx2ATBDIyd" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
 </head>
 
 <body>
 
-  <main>
-    <h1>Hello, World! Welcome to $i^i$</h1>
-    <h2>KaTeXの導入</h2>
-    <p>
-      KaTeXを導入できた。以前も導入して何らかの不都合でMathJaxに戻した記憶があるが、よく覚えていない。まあ、大丈夫だろう。インライン数式は例えば$e^{i\pi}=-1$のように書く。ディスプレイは
-      $$
-        \dfrac{d}{dx}\int_a^xf(t)dt = f(x)
-      $$
-      のようになる。
+  <!-- hero -->
+  <section class="hero top-section">
+    <a href="article/-dummy-calc//calc_1/">
+      <div class="hero-container hero-container-link hz-container">
+        <div class="hero-img-container">
+          <img src="/-img/demoimg2.jpg" alt="">
+        </div>
+        <div class="hero-text-container">
+          <h2 class="hero_title">
+            解析#1<br>解析学とは
+            <span class="hero-subtitle">〜微分積分のその先へ〜</span>
+          </h2>
+          <i class="fa-solid fa-circle-chevron-right"></i>
+        </div>
+      </div>
+    </a>
+  </section>
 
-      HTMLのコード上でいくら改行しても表示には反映されない。brタグを用いれば<br>このように強制改行できる。
-    </p>
-    <p>
-      だいぶ思い出してきた。懐かしいなあ。昔の自分はこんなのすらすら作っていたのか、信じられん。  
-    </p>
-  </main>
+  <section class="top-section">
+    <div class="hz-container">
+      <h1>1学期中間考査 5/16(月)〜</h1>
+      <p>
+        数学Bは2日目、数学IIは4日目、いずれも3時間目に<span class="bold">80分間</span>で実施される。基礎を確認するとともに、青チャート・体系問題集を完璧にしておこう。
+      </p>
+      <div class="articlecards-container">
+        <article class="articlecard">
+          <a href="/article/-dummy-calc/calc_1/">
+            <div class="articlecard_img">
+              <img src="/-img/demoimg1.png">
+            </div>
+            <div class="articlecard_title">
+              <span class="state">new!</span>解析#1<br>~微分積分のその先へ~
+            </div>
+          </a>
+        </article>
+        <article class="articlecard">
+          <a href="/article/-dummy-senkei/">
+            <div class="articlecard_img">
+              <img src="/-img/demoimg2.jpg">
+            </div>
+            <div class="articlecard_title">
+              <span class="state">new!</span>線型代数
+            </div>
+          </a>
+        </article>
+        <article class="articlecard">
+          <a href="/article/-dummy-calc/">
+            <div class="articlecard_img">
+              <img src="/-img/demoimg2.jpg">
+            </div>
+            <div class="articlecard_title">
+              解析
+            </div>
+          </a>
+        </article>
+        <article class="articlecard">
+          <a href="/article/-dummy-calc/">
+            <div class="articlecard_img">
+              <img src="/-img/demoimg2.jpg" alt="">
+            </div>
+            <div class="articlecard_title">
+              解析
+            </div>
+          </a>
+        </article>
+        <article class="articlecard">
+          <a href="/article/-dummy-calc/calc_1/">
+            <div class="articlecard_img">
+              <img src="/-img/demoimg2.jpg">
+            </div>
+            <div class="articlecard_title">
+              <span class="state">new!</span>解析#1<br>~微分積分のその先へ~
+            </div>
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
 
+  <section class="top-section">
+    <div class="hz-container">
+      <h2>KaTeXの導入</h2>
+      <p>
+        KaTeXを導入できた。以前も導入して何らかの不都合でMathJaxに戻した記憶があるが、よく覚えていない。まあ、大丈夫だろう。インライン数式は例えば$e^{i\pi}=-1$のように書く。ディスプレイは
+        $$
+          \dfrac{d}{dx}\int_a^xf(t)dt = f(x)
+        $$
+        のようになる。ここで重要なのは、今はパラグラフを分けていないということだ。数式の前の文も後の文も同じpダグ内に書かれている。段落頭の字下げをすればよりわかりやすいだろう。
+  
+        HTMLのコード上でいくら改行しても表示には反映されない。brタグを用いれば、<br>こ<br>の<br>よ<br>う<br>に強制改行できる。
+      </p>
+      <p>
+        だいぶ思い出してきた。懐かしいなあ。昔の自分はこんなのをすらすらと作っていたのか、信じられん。  
+      </p>
+      <p>
+        ついでにjsのfetch APIを用いた共通部分のインクルード化も試してみた。ローカルのファイルを直接開いたのではAPIが動作しないが、VSCodeのLiveServer拡張機能を用いれば、これが仮想的なサーバのように機能してくれるおかげできちんと動作している。
+      </p>
+      <p>
+        しかもこいつ、保存するたびにページが自動で更新される。有能やんけ。
+      </p>
+    </div>
+  </section>
 
-  <script>
-    fetch("header.html")
-      .then((response) => response.text())
-      .then((data) => document.querySelector("body").insertAdjacentHTML('afterbegin', data));
-    fetch("footer.html")
-      .then((response) => response.text())
-      .then((data) => document.querySelector("body").insertAdjacentHTML('beforeend', data));
-  </script>
-
+  <section class="top-section history">
+    <div class="hz-container">
+      <h2 class="top-section-heading">
+        仕様更新履歴
+      </h2>
+      <dl>
+        <dt>24.04.30</dt><dd>以下の履歴はダミーです。</dd>
+        <dt>22.05.07</dt><dd>外観リニューアル</dd>
+        <dt>22.02.24</dt><dd>数式表示をMathJaxに戻しました</dd>
+        <dt>22.02.05</dt><dd>執筆者が増えました：<a href="/admin/itoiArchive/about/author/" class="link">執筆者</a></dd>
+        <dt>22.02.04</dt><dd>WEBフォントを廃止しました。読み込みが早くなっていると思います。</dd>
+      </dl>
+    </div>
+  </section>
 </body>
 
 </html>
